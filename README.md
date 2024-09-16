@@ -79,18 +79,20 @@ The script generates a user-friendly HTML report styled with **Bootstrap**.
 The report organizes each audit section using cards, and the package installation status is displayed with green checkmarks and red crosses for quick visual reference.
 
 The report includes sections like:
-*Disk Encryption Status
-*Secure Boot Status
-*ClamAV Status
-*Rootkit Hunter Scan Results
-*Firewall Rules
-*And more...
+* Disk Encryption Status
+* Secure Boot Status
+* ClamAV Status
+* Rootkit Hunter Scan Results
+* Firewall Rules
+* And more...
 
 # Kernel Hardening
-The script checks for and creates /etc/sysctl.d/99-security.conf if it doesn’t exist. This file enforces key kernel hardening settings, including:
+The script checks for and creates ```/etc/sysctl.d/99-security.conf``` if it doesn’t exist. This file enforces key kernel hardening settings, including:
 
 * **ASLR (Address Space Layout Randomization):** Makes it harder for attackers to predict memory addresses, reducing exploit success.
+
 * **SYN Cookies:** Protects against SYN flood attacks, a common form of Denial-of-Service (DoS) attack.
+
 * **Reverse Path Filtering:** Helps prevent IP spoofing by verifying the source of packets.
 
 These kernel parameters are automatically applied when the script runs.
@@ -98,35 +100,45 @@ These kernel parameters are automatically applied when the script runs.
 # Example of HTML Report Sections
 
 1. **Disk Encryption Status:**
-* Checks for the presence of LUKS encryption.
-* Example output: "LUKS encryption is enabled on /dev/mapper."
+   - Checks for the presence of LUKS encryption.
+   - Example output: "LUKS encryption is enabled on /dev/mapper."
+
 2. **Secure Boot Status:**
-* Ensures that Secure Boot is active to prevent unauthorized boot environments.
-* Example output: "Secure Boot is enabled."
+   - Ensures that Secure Boot is active to prevent unauthorized boot environments.
+   - Example output: "Secure Boot is enabled."
+
 3. **Package Installation Check:**
-*Verifies that all required packages are installed. If a package is missing, the script will display a red cross.
-*Example output:
+   - Verifies that all required packages are installed. If a package is missing, the script will display a red cross.
+   - Example output:
 ![image](https://github.com/user-attachments/assets/c26d35e5-67dc-45c2-95d6-42c3a44df432)
 
 # Why This Script?
-Security audits are critical to protecting a system against known threats and vulnerabilities. This script automates the manual process of checking security configurations, saving time and reducing human error. Here's why each section of the script is essential:
+Security audits are critical to protecting a system against known threats and vulnerabilities. 
+This script automates the manual process of checking security configurations, saving time and reducing human error. 
+Here's why each section of the script is essential:
 
-Disk Encryption: Ensures that sensitive data is protected from unauthorized access.
-Secure Boot: Protects the boot process by verifying digital signatures.
-Antivirus (ClamAV): Ensures that the system is protected against malware.
-Firewall: Ensures that network traffic is appropriately filtered.
-Rootkit Hunter: Detects malicious software that could otherwise go unnoticed.
-SELinux: Ensures mandatory access controls are in place, enforcing strict security policies.
-Password Policies: Ensures password strength and expiration policies reduce the risk of account compromise.
-Suricata (IDS): Detects and alerts on suspicious network activity.
-AIDE: Detects unauthorized file changes that could indicate a breach.
-Auditd: Logs security-relevant events, providing a trail for investigations.
-Fail2Ban: Prevents brute-force attacks on SSH and other services.
-Time Synchronization: Ensures accurate system time for log correlation and analysis.
-Unattended Security Updates: Ensures the system is patched with the latest security fixes.
+* Disk Encryption: Ensures that sensitive data is protected from unauthorized access.
+* Secure Boot: Protects the boot process by verifying digital signatures.
+* Antivirus (ClamAV): Ensures that the system is protected against malware.
+* Firewall: Ensures that network traffic is appropriately filtered.
+* Rootkit Hunter: Detects malicious software that could otherwise go unnoticed.
+* SELinux: Ensures mandatory access controls are in place, enforcing strict security policies.
+* Password Policies: Ensures password strength and expiration policies reduce the risk of account compromise.
+* Suricata (IDS): Detects and alerts on suspicious network activity.
+* AIDE: Detects unauthorized file changes that could indicate a breach.
+* Auditd: Logs security-relevant events, providing a trail for investigations.
+* Fail2Ban: Prevents brute-force attacks on SSH and other services.
+* Time Synchronization: Ensures accurate system time for log correlation and analysis.
+* Unattended Security Updates: Ensures the system is patched with the latest security fixes.
 
 # Example Use Case
-A SSAE SOC auditor can use this script to conduct regular audits of Linux systems, ensuring all security measures are active and properly configured. The HTML report provides a clear, organized view of the system’s security posture, making it easier to spot misconfigurations or missing services.
+A **SSAE SOC auditor** can use this script to conduct regular audits of Linux systems, ensuring all security measures are active and properly configured. The HTML report provides a clear, organized view of the system’s security posture, making it easier to spot misconfigurations or missing services.
 
+## License
+This script is free to use under the **MIT License**. Feel free to modify and distribute it for your security audit processes.
+
+## Closing Notes:
+The above README provides a comprehensive explanation of the script, how to use it, and why each component matters.
+It should be a valuable guide for anyone running the script for SOC audit purposes.
 
 
