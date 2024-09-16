@@ -60,15 +60,16 @@ sudo ./soc_audit_check.sh
 3. The script will display audit results in the console and generate an HTML report (soc_audit_report.html) in the same directory.
 
 ## Generated HTML Report
-The script generates a user-friendly HTML report styled with Bootstrap. The report organizes each audit section using cards, and the package installation status is displayed with green checkmarks and red crosses for quick visual reference.
+The script generates a user-friendly HTML report styled with **Bootstrap**.
+The report organizes each audit section using cards, and the package installation status is displayed with green checkmarks and red crosses for quick visual reference.
 
 The report includes sections like:
--Disk Encryption Status
--Secure Boot Status
--ClamAV Status
--Rootkit Hunter Scan Results
--Firewall Rules
--And more...
+*Disk Encryption Status
+*Secure Boot Status
+*ClamAV Status
+*Rootkit Hunter Scan Results
+*Firewall Rules
+*And more...
 
 # Kernel Hardening
 The script checks for and creates /etc/sysctl.d/99-security.conf if it doesn’t exist. This file enforces key kernel hardening settings, including:
