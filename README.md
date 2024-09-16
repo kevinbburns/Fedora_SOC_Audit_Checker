@@ -140,7 +140,7 @@ Here's why each section of the script is essential:
 
 # Example Use Case
 
-A **SSAE SOC auditor** can use this script to conduct regular audits of (**RPM/YUM**) based Linux systems, i.e. (Redhat, Fedora), ensuring all security measures are active and properly configured. The HTML report provides a clear, organized view of the system’s security posture, making it easier to spot misconfigurations or missing services.
+A **SSAE SOC auditor** can use this script to conduct regular audits of **RPM/YUM** based Linux systems, i.e. (Redhat,Fedora,CentOS), ensuring all security measures are active and properly configured. The HTML report provides a clear, organized view of the system’s security posture, making it easier to spot misconfigurations or missing services.
 
 ## License
 
