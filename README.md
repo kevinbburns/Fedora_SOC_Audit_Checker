@@ -7,22 +7,22 @@ This script is designed to automate various system security audits and checks, e
 
 The script performs the following tasks:
 
-**Disk Encryption Check:** Verifies if disk encryption (LUKS) is enabled and displays the encryption status.
-**Secure Boot Check:** Ensures that Secure Boot is enabled to prevent unauthorized bootloaders or operating systems from running.
-**Antivirus Status Check (ClamAV):** Checks whether the ClamAV service is running and shows its status. It also checks the last virus database update.
-**Firewall Status:** Verifies that the system's firewall (firewalld) is active and lists current rules.
-**Rootkit Hunter (rkhunter) Scan:** Runs rkhunter to check for rootkits or known vulnerabilities.
-**SELinux Status:** Checks if SELinux is enabled, which adds a mandatory access control (MAC) security layer.
-**Password Policy Checks:** Checks the password expiration and complexity policies for user accounts.
-**Intrusion Detection (Suricata):** Verifies that the Suricata Network Intrusion Detection System (NIDS) is active and running.
-**File Integrity Monitoring (AIDE):** Runs AIDE to check the integrity of important system files, ensuring they haven’t been tampered with.
-**Auditd Status:** Verifies that auditd, the system auditing daemon, is running.
-**Fail2Ban Status:** Ensures that Fail2Ban is running, providing brute-force attack prevention.
-**Open Ports and Services:** Lists open ports and services, showing which ones are accessible externally.
-**Time Synchronization Status (Chrony):** Checks that time synchronization is active, ensuring accurate logs and system time.
-**Unattended Security Updates:** Ensures that DNF-Automatic is active, which automates system updates and security patches.
-**Package Installation Check:** Verifies that essential security packages are installed (e.g., clamav, firewalld, rkhunter, etc.). The script outputs a green checkmark (✔) for installed packages and a red cross (✘) for missing ones.
-**Kernel Hardening Configuration:** Automatically creates a /etc/sysctl.d/99-security.conf file (if it doesn’t exist) to apply critical kernel security settings and ensures they are applied.
+1.**Disk Encryption Check:** Verifies if disk encryption (LUKS) is enabled and displays the encryption status.
+2.**Secure Boot Check:** Ensures that Secure Boot is enabled to prevent unauthorized bootloaders or operating systems from running.
+3.**Antivirus Status Check (ClamAV):** Checks whether the ClamAV service is running and shows its status. It also checks the last virus database update.
+4.**Firewall Status:** Verifies that the system's firewall (firewalld) is active and lists current rules.
+5.**Rootkit Hunter (rkhunter) Scan:** Runs rkhunter to check for rootkits or known vulnerabilities.
+6.**SELinux Status:** Checks if SELinux is enabled, which adds a mandatory access control (MAC) security layer.
+7.**Password Policy Checks:** Checks the password expiration and complexity policies for user accounts.
+8.**Intrusion Detection (Suricata):** Verifies that the Suricata Network Intrusion Detection System (NIDS) is active and running.
+9.**File Integrity Monitoring (AIDE):** Runs AIDE to check the integrity of important system files, ensuring they haven’t been tampered with.
+10.**Auditd Status:** Verifies that auditd, the system auditing daemon, is running.
+11.**Fail2Ban Status:** Ensures that Fail2Ban is running, providing brute-force attack prevention.
+12.**Open Ports and Services:** Lists open ports and services, showing which ones are accessible externally.
+13.**Time Synchronization Status (Chrony):** Checks that time synchronization is active, ensuring accurate logs and system time.
+14.**Unattended Security Updates:** Ensures that DNF-Automatic is active, which automates system updates and security patches.
+15.**Package Installation Check:** Verifies that essential security packages are installed (e.g., clamav, firewalld, rkhunter, etc.). The script outputs a green checkmark (✔) for installed packages and a red cross (✘) for missing ones.
+16.**Kernel Hardening Configuration:** Automatically creates a /etc/sysctl.d/99-security.conf file (if it doesn’t exist) to apply critical kernel security settings and ensures they are applied.
 
 ## Installation and Usage
 ### Requirements
