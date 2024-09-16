@@ -124,19 +124,19 @@ Security audits are critical to protecting a system against known threats and vu
 This script automates the manual process of checking security configurations, saving time and reducing human error. 
 Here's why each section of the script is essential:
 
-* ** Disk Encryption:**  Protects sensitive data from unauthorized access.
-* ** Secure Boot:**  Protects the boot process by verifying digital signatures.
-* ** Antivirus (ClamAV):**  Ensures the system is protected against malware.
-* ** Firewall:**  Ensures that network traffic is appropriately filtered.
-* ** Rootkit Hunter:**  Detects malicious software that could otherwise go unnoticed.
-* ** SELinux:**  Ensures mandatory access controls are in place, enforcing strict security policies.
-* ** Password Policies:**  Ensures password strength and expiration policies reduce the risk of account compromise.
-* ** Suricata (IDS):**  Detects and alerts on suspicious network activity.
-* ** AIDE:**  Detects unauthorized file changes that could indicate a breach.
-* ** Auditd:**  Logs security-relevant events, providing a trail for investigations.
-* ** Fail2Ban:**  Prevents brute-force attacks on SSH and other services.
-* ** Time Synchronization:**  Ensures accurate log correlation and analysis system time.
-* ** Unattended Security Updates:**  Ensures the system is patched with the latest security fixes.
+* **Disk Encryption:**  Protects sensitive data from unauthorized access.
+* **Secure Boot:**  Protects the boot process by verifying digital signatures.
+* **Antivirus (ClamAV):**  Ensures the system is protected against malware.
+* **Firewall:**  Ensures that network traffic is appropriately filtered.
+* **Rootkit Hunter:**  Detects malicious software that could otherwise go unnoticed.
+* **SELinux:**  Ensures mandatory access controls are in place, enforcing strict security policies.
+* **Password Policies:**  Ensures password strength and expiration policies reduce the risk of account compromise.
+* **Suricata (IDS):**  Detects and alerts on suspicious network activity.
+* **AIDE:**  Detects unauthorized file changes that could indicate a breach.
+* **Auditd:**  Logs security-relevant events, providing a trail for investigations.
+* **Fail2Ban:**  Prevents brute-force attacks on SSH and other services.
+* **Time Synchronization:**  Ensures accurate log correlation and analysis system time.
+* **Unattended Security Updates:**  Ensures the system is patched with the latest security fixes.
 
 # Example Use Case
 
