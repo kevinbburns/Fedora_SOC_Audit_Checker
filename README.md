@@ -64,15 +64,15 @@ sudo dnf install clamav firewalld rkhunter aide suricata audit fail2ban chrony d
 ```
 
 # Running the Script
-1. Clone or Download this repository and make the script executable:
+1. **Clone or Download** this repository and make the script executable:
 ```
 chmod +x soc_audit_check.sh
 ```
-2. Run the script with superuser privileges to ensure all commands execute successfully:
+2. **Run the script** with superuser privileges to ensure all commands execute successfully:
 ``` 
 sudo ./soc_audit_check.sh
 ```
-3. The script will display audit results in the console and generate an HTML report (soc_audit_report.html) in the same directory.
+3. The script will display audit results in the console and generate an HTML report (```soc_audit_report.html```) in the same directory.
 
 ## Generated HTML Report
 The script generates a user-friendly HTML report styled with **Bootstrap**.
