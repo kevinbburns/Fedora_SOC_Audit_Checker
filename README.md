@@ -114,7 +114,7 @@ These kernel parameters are automatically applied when the script runs.
 3. **Package Installation Check:**
    - Verifies that all required packages are installed. If a package is missing, the script will display a red cross.
    - Example output:
-![image](https://github.com/user-attachments/assets/c26d35e5-67dc-45c2-95d6-42c3a44df432)
+    - ![image](https://github.com/user-attachments/assets/c26d35e5-67dc-45c2-95d6-42c3a44df432)
      
 
 # Why This Script?
