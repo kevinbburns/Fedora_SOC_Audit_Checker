@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'>
+<title>Audit Report - September 17, 2024</title>
+</head>
+<body class='container mt-4'>
+<h1 class='text-center'>Audit Report - September 17, 2024</h1><hr><br/>
+<div class='mb-4'>
+  <p><strong>What is this report?</strong></p>
+  <p>This report provides an overview of the security and operational status of the system. It includes checks on disk encryption, service status, network security, and various configurations that are critical for maintaining system integrity and ensuring compliance with security best practices.</p>
+  <p><strong>What does it do?</strong></p>
+  <p>The report performs system checks such as disk encryption verification, malware detection, secure boot status, firewall activity, and open ports. Additionally, it checks for the presence of security services like SELinux, AIDE (file integrity monitoring), and more.</p>
+  <p><strong>Why is this important?</strong></p>
+  <p>Regular auditing and monitoring of system settings and services help identify potential vulnerabilities or misconfigurations that could lead to security incidents. This report is an essential tool for maintaining system security and staying compliant with organizational or industry-specific security requirements.</p>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Disk Encryption Status</h4>
+</div>
+<div class='card-body'>
+<p>This checks if disk encryption is enabled and the encryption status of the specified LUKS partition.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+└─nvme0n1p3                                   crypto_LUKS 2            c138a6fd-a844-4cc7-8dc2-962aad0d77ab                
+/dev/mapper/luks-c138a6fd-a844-4cc7-8dc2-962aad0d77ab is active and is in use.
+  type:    LUKS2
+  cipher:  aes-xts-plain64
+  keysize: 512 bits
+  key location: keyring
+  device:  /dev/nvme0n1p3
+  sector size:  512
+  offset:  32768 sectors
+  size:    3903668224 sectors
+  mode:    read/write
+  flags:   discards 
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>LUKS Encryption Details</h4>
+</div>
+<div class='card-body'>
+<p>This checks the encryption algorithm and key size used by the specified LUKS partition.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+	Cipher:     aes-xts-plain64
+	Cipher key: 512 bits
+	Cipher:     aes-xts-plain64
+	Cipher key: 512 bits
+	Cipher:     aes-xts-plain64
+	Cipher key: 512 bits
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Secure Boot Status</h4>
+</div>
+<div class='card-body'>
+<p>Secure Boot ensures only trusted software runs during the boot process.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+SecureBoot enabled
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Antivirus Status (ClamAV)</h4>
+</div>
+<div class='card-body'>
+<p><strong>ClamAV</strong> is an open-source antivirus engine designed to detect malware, viruses, and other malicious threats on a system. It is commonly used in email scanning, web scanning, and file scanning applications. ClamAV can be deployed on various platforms, including Linux, macOS, and Windows. It supports multiple file formats and uses both signature-based and heuristic detection methods to identify threats.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Active: activating (start) since Tue 2024-09-17 16:54:12 EDT; 5s ago
+clamav     55085  0.0  0.0 244364  6816 ?        Ss   16:54   0:00 /usr/sbin/clamd -c /etc/clamd.d/scan.conf
+clamav     55086 99.5  1.6 1324708 1048632 ?     Rs   16:54   0:04 /usr/sbin/clamd -c /etc/clamd.d/scan.conf
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>ClamAV Virus Database Last Update</h4>
+</div>
+<div class='card-body'>
+<p>The <strong>ClamAV database</strong> contains a collection of malware signatures that are used by the ClamAV antivirus engine to detect viruses, malware, trojans, and other malicious threats. This database is essential for ClamAV to effectively identify known malware through signature-based detection methods.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Mon Sep 16 16:50:37 2024 -&gt; ClamAV update process started at Mon Sep 16 16:50:37 2024
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Firewall Status</h4>
+</div>
+<div class='card-body'>
+<p>A <strong>firewall</strong> is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. It acts as a barrier between a trusted internal network and untrusted external networks, such as the internet, to prevent unauthorized access and protect the system from potential threats. Firewalls can be implemented as hardware, software, or a combination of both, and they are designed to enforce security policies by filtering network traffic.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Active: active (running) since Tue 2024-09-17 13:27:25 EDT; 3h 26min ago
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Linux Malware Detect (LMD) Installation Check</h4>
+</div>
+<div class='card-body'>
+<p><strong>LMD (Linux Malware Detect)</strong>, also known as <b>Maldet</b>, is a malware scanner specifically designed for Linux-based systems. It is primarily focused on detecting malware that targets shared hosting environments, but it can be used on any Linux server. LMD scans for malicious files based on signature matching, heuristic detection, and monitoring of file system changes.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+maldet is installed
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Last LMD (maldet) Run</h4>
+</div>
+<div class='card-body'>
+<p>This checks when LMD (maldet) was last run by checking the modification time of the most recent log.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Last maldet scan log: /usr/local/maldetect/logs/event_log
+2024-09-17 13:55:00.867674984 -0400
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>SELinux Status</h4>
+</div>
+<div class='card-body'>
+<p><strong>SELinux (Security-Enhanced Linux)</strong> is a security architecture integrated into the Linux kernel that provides a mechanism for enforcing access control policies. It uses Mandatory Access Control (MAC), which means it restricts what processes and users can do, even if they have root privileges. SELinux helps protect systems by limiting the potential damage from security vulnerabilities, misconfigurations, or compromised processes.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      33
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Users with valid login shells</h4>
+</div>
+<div class='card-body'>
+<p>The <strong>"users with valid login shells"</strong> check is essential for ensuring that only authorized users have access to an interactive shell on the system. A valid login shell allows a user to execute commands, access files, and interact with the system. Misconfigured user accounts with valid login shells could provide unauthorized individuals with unintended access to system resources, posing a significant security risk.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+kburns
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Password Expiration Policies for Valid Users</h4>
+</div>
+<div class='card-body'>
+<p>This checks the password expiration and aging policies for all users with valid login shells.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Password Expiration Policy For kburns
+Last password change					: Sep 17, 2024
+Password expires					: Oct 17, 2024
+Password inactive					: never
+Account expires						: never
+Minimum number of days between password change		: 7
+Maximum number of days between password change		: 30
+Number of days of warning before password expires	: 5
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Root Account Status</h4>
+</div>
+<div class='card-body'>
+<p><strong>Disabling the root account</strong> is an important security measure that reduces the risk of unauthorized or malicious access to a system's most privileged user. The root account has unrestricted access to all commands, files, and processes on a Linux system, making it a prime target for attackers. By disabling direct access to the root account, particularly for remote logins, the system relies on regular user accounts with more limited privileges, requiring users to escalate privileges through safer methods like <i style='background-color:#f7f7f7'>sudo</i>.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Root account is disabled
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Password Complexity Policy</h4>
+</div>
+<div class='card-body'>
+<p><strong>Password Complexity</strong> refers to the set of rules and requirements that enforce the creation of strong, secure passwords to protect user accounts and system access. These rules often include minimum length, the inclusion of a mix of uppercase and lowercase letters, numbers, special characters, and restrictions on reusing old passwords or using easily guessable patterns.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+difok = 2
+minlen = 12
+dcredit = -1
+ucredit = -1
+lcredit = -1
+ocredit = -1
+minclass = 4
+maxrepeat = 2
+maxclassrepeat = 2
+dictcheck = 1
+usercheck = 1
+# The check is enabled if the value is greater than 0 and usercheck is enabled.
+usersubstr = 1
+enforcing = 1
+retry = 3
+enforce_for_root
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card mt-4'>
+<div class='card-header bg-primary text-white'>
+<h4>Password Complexity Options Description</h4>
+</div>
+<div class='card-body'>
+<table class='table table-bordered'>
+<thead><tr><th>Option</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td><code>minlen</code></td><td>Minimum length of the password.</td><td>A longer password is harder to crack. Minimum length ensures password complexity. A value of 12 or more is recommended for security.</td></tr>
+<tr><td><code>difok</code></td><td>Number of characters that must differ from the old password.</td><td>Ensures that users cannot easily reuse parts of their previous password, improving security.</td></tr>
+<tr><td><code>dcredit</code></td><td>Minimum number of digits required in the password.</td><td>If set to a negative number (e.g., <code>dcredit=-1</code>), it enforces that at least one digit is required. This ensures stronger password entropy by adding numeric characters.</td></tr>
+<tr><td><code>ucredit</code></td><td>Minimum number of uppercase letters required.</td><td>If set to a negative number (e.g., <code>ucredit=-1</code>), at least one uppercase letter must be present. This forces diversity in character classes, making passwords harder to guess.</td></tr>
+<tr><td><code>lcredit</code></td><td>Minimum number of lowercase letters required.</td><td>If set to a negative number (e.g., <code>lcredit=-1</code>), it ensures at least one lowercase letter. Like <code>ucredit</code>, this adds complexity to the password.</td></tr>
+<tr><td><code>ocredit</code></td><td>Minimum number of special characters required.</td><td>If set to a negative number (e.g., <code>ocredit=-1</code>), at least one special character (e.g., <code>@</code>, <code>!</code>) is required, increasing password strength by adding non-alphanumeric characters.</td></tr>
+<tr><td><code>minclass</code></td><td>Minimum number of different character classes (uppercase, lowercase, digits, special characters) required.</td><td>Forces diversity in password construction. For example, setting <code>minclass=3</code> requires that the password uses at least three different types of characters, improving its resilience to brute-force attacks.</td></tr>
+<tr><td><code>maxrepeat</code></td><td>Maximum number of consecutive identical characters allowed.</td><td>Limits repetition of the same character (e.g., <code>aaa</code>). Prevents users from creating weak passwords with repetitive characters.</td></tr>
+<tr><td><code>maxclassrepeat</code></td><td>Maximum number of consecutive characters from the same class allowed (e.g., <code>AAA</code>).</td><td>Limits repetition of characters from the same class (e.g., consecutive uppercase letters). This prevents patterns like <code>AAA</code> or <code>111</code>, which are easier to guess.</td></tr>
+<tr><td><code>retry</code></td><td>Number of allowed retry attempts for setting the password.</td><td>Gives the user multiple attempts (e.g., <code>retry=3</code>) to meet the password complexity rules without immediate rejection.</td></tr>
+<tr><td><code>gecoscheck</code></td><td>Check if the password contains parts of the user's GECOS string (e.g., full name).</td><td>Prevents users from including personal information (such as their full name) in the password, making it harder to guess.</td></tr>
+<tr><td><code>dictcheck</code></td><td>Check password against a dictionary of common passwords.</td><td>Ensures that the password isn't a commonly used or dictionary word, reducing the risk of password guessing attacks.</td></tr>
+<tr><td><code>usercheck</code></td><td>Check if password contains the username or parts of it.</td><td>Prevents users from creating a password that contains their username or portions of it, which would be easy for attackers to guess.</td></tr>
+<tr><td><code>usersubstr</code></td><td>Minimum length of substrings of the username to check against the password.</td><td>Specifies how many characters of the username must match in the password for it to be rejected. Helps enforce user-specific password policies.</td></tr>
+<tr><td><code>enforcing</code></td><td>Enforce all password checks and reject passwords that fail any check.</td><td>Ensures that the password complexity rules are strictly enforced and passwords that don’t meet the requirements are rejected.</td></tr>
+<tr><td><code>enforce_for_root</code></td><td>Enforce password complexity rules for the root user.</td><td>Ensures that even the root user is subject to the password complexity policies, enhancing overall system security.</td></tr>
+</tbody></table>
+</div></div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Suricata Status</h4>
+</div>
+<div class='card-body'>
+<p><strong>Suricata</strong> is an open-source network threat detection engine capable of performing real-time intrusion detection (IDS), intrusion prevention (IPS), and network security monitoring. It inspects network traffic, looking for malicious activities by analyzing network packets and application layer protocols. Suricata can operate in various modes and integrates with existing security infrastructures to provide detailed network visibility and security alerts.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Active: active (running) since Tue 2024-09-17 13:41:45 EDT; 3h 12min ago
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>AIDE (Advanced Intrusion Detection Environment) Status and Last Run</h4>
+</div>
+<div class='card-body'>
+<p>This checks if AIDE (Advanced Intrusion Detection Environment) is installed, running, and the last time the AIDE database was updated. <strong>AIDE (Advanced Intrusion Detection Environment)</strong> is a security tool used to monitor the integrity of files and directories on a system. It works by creating a database of file attributes, such as checksums and permissions, and then compares the current state of the system with the recorded database to detect any unauthorized or unexpected changes. This helps in identifying potential security breaches or tampering.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+AIDE is installed
+Modify: 2024-09-17 10:32:14.237597906 -0400
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Auditd Status</h4>
+</div>
+<div class='card-body'>
+<p><strong>Auditd</strong> is the userspace component of the Linux Auditing System that is responsible for logging and recording security-relevant events on the system. It helps track system activities and provides detailed information about processes, file access, and other critical events to assist in monitoring and ensuring system security.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Active: active (running) since Tue 2024-09-17 13:27:25 EDT; 3h 26min ago
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Fail2Ban Status</h4>
+</div>
+<div class='card-body'>
+<p><strong>Fail2Ban</strong> is a security tool that monitors system logs for signs of repeated failed login attempts and other suspicious activity. When it detects such behavior, Fail2Ban can automatically take action, such as temporarily blocking the offending IP addresses, to prevent further unauthorized access attempts.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Active: active (running) since Tue 2024-09-17 13:27:25 EDT; 3h 26min ago
+Status
+|- Number of jail:	0
+`- Jail list:	
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Open Ports and Services (Remotely Accessible)</h4>
+</div>
+<div class='card-body'>
+<p>Listing open ports and services is a fundamental step in an audit as it helps identify potential entry points for attackers. Open ports indicate services that are accessible over the network, and any unnecessary or misconfigured services can present security risks. By reviewing which ports are open and what services are running, auditors can assess whether there are any vulnerabilities, unneeded services, or misconfigurations that could be exploited. Identifying and securing open ports is crucial for reducing the attack surface and ensuring that only authorized services are available to the network, which is key to maintaining a secure system during an audit.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:Port
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Time Synchronization Status (Chrony)</h4>
+</div>
+<div class='card-body'>
+<p><strong>Chrony</strong> is a versatile and robust time synchronization daemon that ensures the system’s clock is accurately synchronized with external time servers. Accurate system time is critical for a variety of reasons, particularly for logging, auditing, and security protocols. In an audit, having correct timestamps is essential for tracking system events, correlating activities, and ensuring that logs reflect the true sequence of events. If system time is incorrect, it can lead to discrepancies in audit trails, making it harder to detect and investigate security incidents.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Active: active (running) since Tue 2024-09-17 13:27:25 EDT; 3h 26min ago
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Unattended Security Updates (DNF-Automatic)</h4>
+</div>
+<div class='card-body'>
+<p><strong>Unattended security updates</strong> are crucial for maintaining the security and integrity of a system. They ensure that critical vulnerabilities are patched automatically, without requiring manual intervention. This is especially important for mitigating the risks posed by zero-day vulnerabilities and minimizing the attack surface. By automatically applying security updates, systems are kept up-to-date with the latest fixes, reducing the likelihood of exploitation and helping to maintain compliance with security policies and standards during an audit.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Active: active (waiting) since Tue 2024-09-17 13:27:25 EDT; 3h 26min ago
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+<div class='card' style='margin-bottom:25px'>
+  <div class='card-header bg-primary text-white'>
+<h4>Firmware Security Status (fwupdmgr)</h4>
+</div>
+<div class='card-body'>
+<p><strong>fwupdmgr</strong> is a command-line tool used for managing and updating firmware on Linux systems. It interacts with the Linux Vendor Firmware Service (LVFS) to check for and apply firmware updates for various hardware components. The security option in <i style='background-color:#f7f7f7'>fwupdmgr</i> provides information about the security status of the installed firmware, helping users ensure that their devices are running firmware with the latest security patches and are protected from known vulnerabilities.</p><hr>
+<style> pre { padding: 0; margin: 0; } </style>
+<div class='bg-light p-1' style='text-align:left'}><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+.ansi2html-content { display: inline; white-space: pre-wrap; word-wrap: break-word; }
+.body_foreground { color: #AAAAAA; }
+.body_background { background-color: #000000; }
+.inv_foreground { color: #000000; }
+.inv_background { background-color: #AAAAAA; }
+.ansi1 { font-weight: bold; }
+.ansi31 { color: #aa0000; }
+.ansi32 { color: #00aa00; }
+</style>
+</head>
+<body class="body_foreground body_background" style="font-size: normal;" >
+<pre class="ansi2html-content">
+Host Security ID: <span class="ansi1">HSI:4 (v1.9.23)</span>
+
+<span class="ansi1">HSI-1</span>
+✔ BIOS firmware updates:         <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+✔ Fused platform:                <span class="ansi32"></span><span class="ansi1 ansi32">Locked</span>
+✔ Supported CPU:                 <span class="ansi32"></span><span class="ansi1 ansi32">Valid</span>
+✔ TPM empty PCRs:                <span class="ansi32"></span><span class="ansi1 ansi32">Valid</span>
+✔ TPM v2.0:                      <span class="ansi32"></span><span class="ansi1 ansi32">Found</span>
+✔ UEFI bootservice variables:    <span class="ansi32"></span><span class="ansi1 ansi32">Locked</span>
+✔ UEFI platform key:             <span class="ansi32"></span><span class="ansi1 ansi32">Valid</span>
+✔ UEFI secure boot:              <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+
+<span class="ansi1">HSI-2</span>
+✔ SPI write protection:          <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+✔ BIOS rollback protection:      <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+✔ IOMMU:                         <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+✔ Platform debugging:            <span class="ansi32"></span><span class="ansi1 ansi32">Locked</span>
+✔ TPM PCR0 reconstruction:       <span class="ansi32"></span><span class="ansi1 ansi32">Valid</span>
+
+<span class="ansi1">HSI-3</span>
+✔ SPI replay protection:         <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+✔ CET Platform:                  <span class="ansi32"></span><span class="ansi1 ansi32">Supported</span>
+✔ Pre-boot DMA protection:       <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+✔ Suspend-to-idle:               <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+✔ Suspend-to-ram:                <span class="ansi32"></span><span class="ansi1 ansi32">Disabled</span>
+
+<span class="ansi1">HSI-4</span>
+✔ Processor rollback protection: <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+✔ Encrypted RAM:                 <span class="ansi32"></span><span class="ansi1 ansi32">Encrypted</span>
+✔ SMAP:                          <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+
+<span class="ansi1">Runtime Suffix -!</span>
+✔ fwupd plugins:                 <span class="ansi32"></span><span class="ansi1 ansi32">Untainted</span>
+✔ CET OS Support:                <span class="ansi32"></span><span class="ansi1 ansi32">Supported</span>
+✔ Linux kernel lockdown:         <span class="ansi32"></span><span class="ansi1 ansi32">Enabled</span>
+✔ Linux swap:                    <span class="ansi32"></span><span class="ansi1 ansi32">Encrypted</span>
+✔ Linux kernel:                  <span class="ansi32"></span><span class="ansi1 ansi32">Untainted</span>
+
+Host Security Events
+  2024-07-30 19:18:32:  <span class="ansi32"></span><span class="ansi1 ansi32">✔</span> Kernel lockdown enabled
+  2024-07-10 13:55:07:  <span class="ansi31"></span><span class="ansi1 ansi31">✘</span> Kernel lockdown disabled
+  2024-06-26 19:17:03:  <span class="ansi32"></span><span class="ansi1 ansi32">✔</span> Kernel is no longer tainted
+  2024-06-10 13:23:03:  <span class="ansi31"></span><span class="ansi1 ansi31">✘</span> Kernel is tainted
+  2024-05-30 13:54:34:  <span class="ansi32"></span><span class="ansi1 ansi32">✔</span> Kernel is no longer tainted
+  2024-05-22 15:36:31:  <span class="ansi31"></span><span class="ansi1 ansi31">✘</span> Kernel is tainted
+  2024-05-22 13:08:33:  <span class="ansi32"></span><span class="ansi1 ansi32">✔</span> Kernel is no longer tainted
+  2024-05-22 11:58:53:  <span class="ansi31"></span><span class="ansi1 ansi31">✘</span> Kernel is tainted
+  2024-05-21 03:00:39:  <span class="ansi32"></span><span class="ansi1 ansi32">✔</span> CET OS Support changed: Not supported → Supported
+
+
+</pre>
+</body>
+
+</html></div>
+</div>
+</div>
+</body></html>
