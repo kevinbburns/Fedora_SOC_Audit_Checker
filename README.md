@@ -15,7 +15,7 @@ The script performs the following tasks:
 
 4. **Firewall Status:** Verifies that the system's firewall (firewalld) is active and lists current rules.
 
-5. **Rootkit Hunter (rkhunter) Scan:** Runs rkhunter to check for rootkits or known vulnerabilities.
+5. **Linux Malware Detect (LMD):** Runs Maldet to check for rootkits,malware or known vulnerabilities.
 
 6. **SELinux Status:** Checks if SELinux is enabled, which adds a mandatory access control (MAC) security layer.
 
@@ -51,7 +51,7 @@ Ensure the following packages are installed before running the script:
 -bash
 -clamav
 -firewalld
--rkhunter
+-maldet
 -aide
 -suricata
 -audit
@@ -128,7 +128,7 @@ Here's why each section of the script is essential:
 * **Secure Boot:**  Protects the boot process by verifying digital signatures.
 * **Antivirus (ClamAV):**  Ensures the system is protected against malware.
 * **Firewall:**  Ensures that network traffic is appropriately filtered.
-* **Rootkit Hunter:**  Detects malicious software that could otherwise go unnoticed.
+* **Linux Malware Detect (LMD):**  Detects malicious software that could otherwise go unnoticed.
 * **SELinux:**  Ensures mandatory access controls are in place, enforcing strict security policies.
 * **Password Policies:**  Ensures password strength and expiration policies reduce the risk of account compromise.
 * **Suricata (IDS):**  Detects and alerts on suspicious network activity.
